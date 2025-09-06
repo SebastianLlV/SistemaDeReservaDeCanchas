@@ -1,1 +1,205 @@
-<!-- Pagina del sistema de reserva de canchas-->
+<!-- Página del sistema de reserva de canchas -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reservación de Canchas</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <!-- Logo -->
+        <div class="navbar__logo">Reserva de Canchas</div>
+
+        <!-- Menú de navegación -->
+        <ul class="navbar__menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#calendario">Calendario</a></li>
+          <li><a href="#precios_paquetes">Precios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <!-- Botón estilo enlace (Book Now) -->
+        <a href="pagos.html" class="nav__book">Pagos</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+      <!-- Título en el sitio web -->
+      <h1 class="hero__title">Reserva tu cancha de manera fácil</h1>
+
+      <!-- Subtítulo -->
+      <p class="hero__subtitle">
+        Elige tu deporte, la fecha y la hora en solo unos clics.
+      </p>
+
+      <!-- Botón dentro del hero -->
+      <a href="pagos.html" class="hero__cta">Reservar Ahora</a>
+    </section>
+
+    <!--Sección de confirmación de reserva-->
+    <section id="reservas" class="reserva-intro">
+      <div class="reserva-texto">
+        <h2>Completa tu Reserva</h2>
+        <p>
+          Reserva facilmente tu cancha de futbol preferida. Siguelos pasos para
+          asegurar tu lugar en un partido inolvidable
+        </p>
+      </div>
+
+      <div class="reserva-imagen">
+        <!--Imagen-->
+        <img src="img/cancha.png" alt="Imagen de la cancha de fútbol"
+      </div>
+    </section>
+
+    <!--Tabla de la elección de los horarios-->
+    <section id="calendario" class="disponibilidad">
+      <div class="disponibilidad-tabla">
+        <h2 class="disponibilidad-titulo">Disponibilidad de Canchas</h2>
+        <h3 class="disponibilidad-subtitulo">
+          Horario de Hoy (Lunes,10 de junio)
+        </h3>
+        <p class="disponibilidad-descripcion">
+          Consulta los últimos espacios libres disponibles para reservar.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Franja Horaria</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>08:00 AM 09:00 AM</td>
+              <td><span class="estado_disponible">Disponible</span></td>
+            </tr>
+            <tr>
+              <td>09:00 AM 10:00 AM</td>
+              <td><span class="estado_reservado">Reservado</span></td>
+            </tr>
+            <tr>
+              <td>10:00 AM 11:00 AM</td>
+              <td><span class="estado_disponible">Disponible</span></td>
+            </tr>
+            <tr>
+              <td>11:00 AM 12:00 PM</td>
+              <td><span class="estado_reservado">Reservado</span></td>
+            </tr>
+            <tr>
+              <td>12:00 PM 01:00 PM</td>
+              <td><span class="estado_disponible">Disponible</span></td>
+            </tr>
+            <tr>
+              <td>01:00 PM 02:00 PM</td>
+              <td><span class="estado_reservado">Reservado</span></td>
+            </tr>
+            <tr>
+              <td>02:00 PM 03:00 PM</td>
+              <td><span class="estado_disponible">Disponible</span></td>
+            </tr>
+            <tr>
+              <td>03:00 PM 04:00 PM</td>
+              <td><span class="estado_reservado">Reservado</span></td>
+            </tr>
+            <tr>
+              <td>04:00 PM 05:00 PM</td>
+              <td><span class="estado_disponible">Disponible</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!--Caracteristicas de la instalacion-->
+    <section id="caracteristicas">
+      <h2>Nuestras instalaciones</h2>
+      <div class="card_caracteristicas">
+        <img src="img/icon">
+        <h3>Iluminacón premium</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero quaerat ea porro optio voluptatibus, perspiciatis saepe sit tempore soluta molestiae quis itaque odio accusamus. Alias quaerat saepe quod fugit.</p>
+      </div>
+      <div class="card_caracteristicas">
+        <img src="img/icon">
+        <h3>Estacionamiento Amplio</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero quaerat ea porro optio voluptatibus, perspiciatis saepe sit tempore soluta molestiae quis itaque odio accusamus. Alias quaerat saepe quod fugit.</p>
+      </div>
+      <div class="card_caracteristicas">
+        <img src="img/icon">
+        <h3>Duchas Modernos</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero quaerat ea porro optio voluptatibus, perspiciatis saepe sit tempore soluta molestiae quis itaque odio accusamus. Alias quaerat saepe quod fugit.</p>
+      </div>
+      <div class="card_caracteristicas">
+        <img src="img/icon">
+        <h3>Grama de alta calidad</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero quaerat ea porro optio voluptatibus, perspiciatis saepe sit tempore soluta molestiae quis itaque odio accusamus. Alias quaerat saepe quod fugit.</p>
+      </div>
+    </section>
+    
+    <!--Seccion de precios y paquetes-->
+    <section id="precios_paquetes" class="precios">
+      <h2>Precios y Paquetes</h2>
+      <div class="card_prec_paquetes">
+        <h2>Valor por Hora</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem pariatur, quas nihil ipsa omnis ut repellendus minima magnam ab? Harum ad rem modi dolores odio! Quia ea pariatur officiis nulla.</p>
+        <span>$120K/hr</span>
+        <ul>
+          <li>123</li>
+          <li>321</li>
+          <li>213</li>
+        </ul>
+        <a href="D_reservation.html">Seleccionar Plan</a>
+      </div>
+      <div class="card_prec_paquetes central">
+        <h2>Paquete Medio Día</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem pariatur, quas nihil ipsa omnis ut repellendus minima magnam ab? Harum ad rem modi dolores odio! Quia ea pariatur officiis nulla.</p>
+        <span>$400K</span>
+        <ul>
+          <li>123</li>
+          <li>321</li>
+          <li>213</li>
+        </ul>
+        <a href="D_reservation.html">Seleccionar Plan</a>
+      </div>
+      <div class="card_prec_paquetes">
+        <h2>Paquete Día completo</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem pariatur, quas nihil ipsa omnis ut repellendus minima magnam ab? Harum ad rem modi dolores odio! Quia ea pariatur officiis nulla.</p>
+        <span>$650K</span>
+        <ul>
+          <li>123</li>
+          <li>321</li>
+          <li>213</li>
+        </ul>
+        <a href="D_reservation.html">Seleccionar Plan</a>
+      </div>
+    </section>
+    <!--Contactanos!!-->
+    <section id="contacto" class="contactanos">
+      <h2>Contactanos</h2>
+      <div class="card_contacto">
+        <h3>Envianos un Mensaje</h3>
+        <form action="">
+          <label for="nombre_completo">Nombre</label>
+          <input type="text" placeholder="Tu Nombre" name="nombre_completo" id="nombre_completo" required>
+
+          <label for="email">Email</label>
+          <input type="email" placeholder="tu@correo.com" name="email" id="email" required>
+
+          <label for="mensaje">Mensaje</label>
+          <textarea name="mensaje" id="mensaje" placeholder="Tu mensaje aqui..." required></textarea>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </div>
+      <div class="card_contacto">
+        <h3>Informacón de Contacto</h3>
+        <ul>
+          <li><a href="tel: +573006784972">+57 300 678 4972</a></li>
+          <li>info@soccerfields.com</li>
+          <li><address>Calle 122 #45-34a,Barranquilla</address></li>
+        </ul>
+        <iframe src="" frameborder="0"></iframe>
+      </div>
+    </section>
+  </body>
+</html>
+
+
