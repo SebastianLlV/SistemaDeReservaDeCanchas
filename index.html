@@ -1,120 +1,205 @@
+<!-- Página del sistema de reserva de canchas -->
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sistema de Reserva de Canchas – Documentación del Proyecto</title>
-</head>
-<body>
+<html>
+  <head>
+    <title>Reservación de Canchas</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <!-- Logo -->
+        <div class="navbar__logo">Reserva de Canchas</div>
 
-  <!-- Menú de navegación -->
-  <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Git Init</a>
-    <a href="#">Configuración de Usuario</a>
-    <a href="#">Configuración de GitHub</a>
-    <a href="#">Colaboradores</a>
-    <a href="#">Clonado</a>
-    <a href="#">Ramas</a>
-    <a href="#">Historial de Commits</a>
-    <a href="#">Despliegue</a>
-    <a href="#">Equipo</a>
-    <a href="#">Requerimientos</a>
-    <a href="#">Repositorio</a>
-    <a href="#">Netlify</a>
-  </nav>
+        <!-- Menú de navegación -->
+        <ul class="navbar__menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#calendario">Calendario</a></li>
+          <li><a href="#precios_paquetes">Precios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
 
-  <!-- Sección principal -->
-  <header>
-    <h1>Sistema de Reserva de Canchas – Documentación del Proyecto</h1>
-    <p>
-      Este sitio web contiene la documentación completa del Proyecto de Reserva de Canchas. Aquí se incluyen 
-      las metodologías empleadas, el proceso de trabajo con Git y GitHub (inicialización, ramas, commits y pull requests),
-      el historial del repositorio, así como la evidencia del despliegue en Netlify. 
-      También se presentan las contribuciones de los integrantes del equipo, capturas de pantalla de cada paso realizado 
-      y los enlaces al repositorio en GitHub y al sitio desplegado.
-    </p>
-    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=600&auto=format&fit=crop" 
-         alt="Ilustración de desarrollo y despliegue" width="300">
-  </header>
+        <!-- Botón estilo enlace (Book Now) -->
+        <a href="pagos.html" class="nav__book">Pagos</a>
+      </nav>
+    </header>
 
-  <!-- Guía -->
-  <section>
-    <h2>Tu Guía para un Desarrollo sin Problemas</h2>
-    <p>
-      Navega las complejidades del desarrollo moderno de software con ProjectFlow Docs. 
-      Nuestras guías dividen los procesos esenciales, desde la configuración inicial hasta 
-      el desarrollo colaborativo y el despliegue final, asegurando que tu equipo trabaje 
-      de manera eficiente y efectiva.
-    </p>
-  </section>
+    <section class="hero" id="inicio">
+      <!-- Título en el sitio web -->
+      <h1 class="hero__title">Reserva tu cancha de manera fácil</h1>
 
-  <!-- Áreas de documentación -->
-  <section>
-    <h2>Explora las Áreas Clave de Documentación</h2>
+      <!-- Subtítulo -->
+      <p class="hero__subtitle">
+        Elige tu deporte, la fecha y la hora en solo unos clics.
+      </p>
 
-    <article>
-      <h3>Operaciones con Git</h3>
-      <p>Domina los fundamentos de Git, incluyendo inicialización, configuración, ramas y manejo del historial de commits.</p>
-      <a href="#">Aprender más</a>
-    </article>
+      <!-- Botón dentro del hero -->
+      <a href="pagos.html" class="hero__cta">Reservar Ahora</a>
+    </section>
 
-    <article>
-      <h3>Gestión de Repositorios</h3>
-      <p>Aprende a configurar, clonar y gestionar repositorios remotos en GitHub, y colabora con tu equipo.</p>
-      <a href="#">Aprender más</a>
-    </article>
+    <!--Sección de confirmación de reserva-->
+    <section id="reservas" class="reserva-intro">
+      <div class="reserva-texto">
+        <h2>Completa tu Reserva</h2>
+        <p>
+          Reserva facilmente tu cancha de futbol preferida. Siguelos pasos para
+          asegurar tu lugar en un partido inolvidable
+        </p>
+      </div>
 
-    <article>
-      <h3>Flujo de Despliegue</h3>
-      <p>Comprende los pasos para desplegar tus aplicaciones usando plataformas como Netlify, vinculando tus repositorios de GitHub.</p>
-      <a href="#">Aprender más</a>
-    </article>
-  </section>
+      <div class="reserva-imagen">
+        <!--Imagen-->
+        <img src="img/cancha.png" alt="Imagen de la cancha de fútbol"
+      </div>
+    </section>
 
-  <!-- Logros -->
-  <section>
-    <h2>Lo que Lograrás</h2>
+    <!--Tabla de la elección de los horarios-->
+    <section id="calendario" class="disponibilidad">
+      <div class="disponibilidad-tabla">
+        <h2 class="disponibilidad-titulo">Disponibilidad de Canchas</h2>
+        <h3 class="disponibilidad-subtitulo">
+          Horario de Hoy (Lunes,10 de junio)
+        </h3>
+        <p class="disponibilidad-descripcion">
+          Consulta los últimos espacios libres disponibles para reservar.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Franja Horaria</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>08:00 AM 09:00 AM</td>
+              <td><span class="estado_disponible">Disponible</span></td>
+            </tr>
+            <tr>
+              <td>09:00 AM 10:00 AM</td>
+              <td><span class="estado_reservado">Reservado</span></td>
+            </tr>
+            <tr>
+              <td>10:00 AM 11:00 AM</td>
+              <td><span class="estado_disponible">Disponible</span></td>
+            </tr>
+            <tr>
+              <td>11:00 AM 12:00 PM</td>
+              <td><span class="estado_reservado">Reservado</span></td>
+            </tr>
+            <tr>
+              <td>12:00 PM 01:00 PM</td>
+              <td><span class="estado_disponible">Disponible</span></td>
+            </tr>
+            <tr>
+              <td>01:00 PM 02:00 PM</td>
+              <td><span class="estado_reservado">Reservado</span></td>
+            </tr>
+            <tr>
+              <td>02:00 PM 03:00 PM</td>
+              <td><span class="estado_disponible">Disponible</span></td>
+            </tr>
+            <tr>
+              <td>03:00 PM 04:00 PM</td>
+              <td><span class="estado_reservado">Reservado</span></td>
+            </tr>
+            <tr>
+              <td>04:00 PM 05:00 PM</td>
+              <td><span class="estado_disponible">Disponible</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!--Caracteristicas de la instalacion-->
+    <section id="caracteristicas">
+      <h2>Nuestras instalaciones</h2>
+      <div class="card_caracteristicas">
+        <img src="img/icon">
+        <h3>Iluminacón premium</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero quaerat ea porro optio voluptatibus, perspiciatis saepe sit tempore soluta molestiae quis itaque odio accusamus. Alias quaerat saepe quod fugit.</p>
+      </div>
+      <div class="card_caracteristicas">
+        <img src="img/icon">
+        <h3>Estacionamiento Amplio</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero quaerat ea porro optio voluptatibus, perspiciatis saepe sit tempore soluta molestiae quis itaque odio accusamus. Alias quaerat saepe quod fugit.</p>
+      </div>
+      <div class="card_caracteristicas">
+        <img src="img/icon">
+        <h3>Duchas Modernos</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero quaerat ea porro optio voluptatibus, perspiciatis saepe sit tempore soluta molestiae quis itaque odio accusamus. Alias quaerat saepe quod fugit.</p>
+      </div>
+      <div class="card_caracteristicas">
+        <img src="img/icon">
+        <h3>Grama de alta calidad</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero quaerat ea porro optio voluptatibus, perspiciatis saepe sit tempore soluta molestiae quis itaque odio accusamus. Alias quaerat saepe quod fugit.</p>
+      </div>
+    </section>
+    
+    <!--Seccion de precios y paquetes-->
+    <section id="precios_paquetes" class="precios">
+      <h2>Precios y Paquetes</h2>
+      <div class="card_prec_paquetes">
+        <h2>Valor por Hora</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem pariatur, quas nihil ipsa omnis ut repellendus minima magnam ab? Harum ad rem modi dolores odio! Quia ea pariatur officiis nulla.</p>
+        <span>$120K/hr</span>
+        <ul>
+          <li>123</li>
+          <li>321</li>
+          <li>213</li>
+        </ul>
+        <a href="D_reservation.html">Seleccionar Plan</a>
+      </div>
+      <div class="card_prec_paquetes central">
+        <h2>Paquete Medio Día</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem pariatur, quas nihil ipsa omnis ut repellendus minima magnam ab? Harum ad rem modi dolores odio! Quia ea pariatur officiis nulla.</p>
+        <span>$400K</span>
+        <ul>
+          <li>123</li>
+          <li>321</li>
+          <li>213</li>
+        </ul>
+        <a href="D_reservation.html">Seleccionar Plan</a>
+      </div>
+      <div class="card_prec_paquetes">
+        <h2>Paquete Día completo</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem pariatur, quas nihil ipsa omnis ut repellendus minima magnam ab? Harum ad rem modi dolores odio! Quia ea pariatur officiis nulla.</p>
+        <span>$650K</span>
+        <ul>
+          <li>123</li>
+          <li>321</li>
+          <li>213</li>
+        </ul>
+        <a href="D_reservation.html">Seleccionar Plan</a>
+      </div>
+    </section>
+    <!--Contactanos!!-->
+    <section id="contacto" class="contactanos">
+      <h2>Contactanos</h2>
+      <div class="card_contacto">
+        <h3>Envianos un Mensaje</h3>
+        <form action="">
+          <label for="nombre_completo">Nombre</label>
+          <input type="text" placeholder="Tu Nombre" name="nombre_completo" id="nombre_completo" required>
 
-    <article>
-      <h3>Control de Versiones Eficiente</h3>
-      <p>Adquiere experiencia en comandos de Git para un control de versiones y seguimiento de historial efectivo.</p>
-    </article>
+          <label for="email">Email</label>
+          <input type="email" placeholder="tu@correo.com" name="email" id="email" required>
 
-    <article>
-      <h3>Colaboración sin Fricciones</h3>
-      <p>Aprende a integrar miembros del equipo y gestionar contribuciones en repositorios compartidos.</p>
-    </article>
-
-    <article>
-      <h3>Despliegues Automatizados</h3>
-      <p>Configura pipelines de despliegue continuo para lanzamientos rápidos y confiables.</p>
-    </article>
-
-    <article>
-      <h3>Flujos de Trabajo Organizados</h3>
-      <p>Adopta las mejores prácticas para un desarrollo de proyectos estructurado y gestión de tareas.</p>
-    </article>
-  </section>
-
-  <!-- Llamado a la acción -->
-  <section>
-    <h2>¿Listo para Elevar tu Gestión de Proyectos?</h2>
-    <p>
-      Sumérgete en ProjectFlow Docs y brinda a tu equipo el conocimiento y las herramientas necesarias 
-      para un desarrollo de software exitoso.
-    </p>
-    <button>Comienza tu Viaje con ProjectFlow</button>
-  </section>
-
-  <!-- Pie de página -->
-  <footer>
-    <p>© <span id="year"></span> Proyecto de Reserva de Canchas — Documentación</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-</body>
+          <label for="mensaje">Mensaje</label>
+          <textarea name="mensaje" id="mensaje" placeholder="Tu mensaje aqui..." required></textarea>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </div>
+      <div class="card_contacto">
+        <h3>Informacón de Contacto</h3>
+        <ul>
+          <li><a href="tel: +573006784972">+57 300 678 4972</a></li>
+          <li>info@soccerfields.com</li>
+          <li><address>Calle 122 #45-34a,Barranquilla</address></li>
+        </ul>
+        <iframe src="" frameborder="0"></iframe>
+      </div>
+    </section>
+  </body>
 </html>
+
+

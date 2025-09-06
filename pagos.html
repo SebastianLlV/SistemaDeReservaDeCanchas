@@ -1,22 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <p>TAqui se implementara el Pago</p>
 
-    <!--Footer Contacto-->
-    <footer class=""footer_contacto>
-        <h2>Necesitas Ayuda? !Contáctanos!</h2>
-        <p>Nuestro equipo de soporte esta disponible para ayudarte 
-            con cualquier duda o problema relacionado con tu reserva.</p>
-            <ul>
-                <li>+57 (309) 378-8903</li>
-                <li>support@footbalfieldbookings.com</li>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="navbar__logo">Reserva de Canchas</div>
+
+            <!-- Menú de navegación -->
+            <ul class="navbar__menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#calendario">Calendario</a></li>
+                <li><a href="#precios_paquetes">Precios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
+
+            <!-- Botón estilo enlace (Book Now) -->
+            <a href="pagos.html" class="nav__book">Pagos</a>
+        </nav>
+    </header>
+    <main>
+        <!--Detalles de reservación-->
+        <section id="pa" class="detalles_reserva">
+            <div class="f_reservacion">
+                <h2>Reserva tu Cancha</h2>
+                <p>Rellene los siguientes datos para completar.
+                    su reserva del campo de fútbol.</p>
+                <!--Formulario de la Reserva-->
+                <form action="">
+                    <label for="nombre_completo">Nombre</label>
+                    <input type="text" placeholder="Tu Nombre" name="nombre_completo" id="nombre_completo" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="tucorreo@ejemplo.com" name="email" id="email" required>
+
+                    <label for="numero">Número de Teléfono</label>
+                    <input type="tel" placeholder="3000000000" name="numero" id="numero" required>
+
+                    <label for="fecha">Fecha</label>
+                    <input type="date" name="fecha" id="fecha" required>
+
+                    <label for="duracion">Duración</label>
+                    <input type="number" name="duracion" min="1" max="8" id="duracion" required>
+                    <span>Hr</span>
+
+                    <label for="s_opcionales">Servicios Opcionales</label>
+                    <select name="s_opcionales" id="s_opcionales" required>
+                        <option value="rentar_equipamiento">Rentar Equipamiento</option>
+                        <option value="agua_extra">Agua Extra</option>
+                        <option value="petos">Petos</option>
+                        <option value="comida">Comida</option>
+                    </select>
+
+                    <label for="hora_inicio">Horario</label>
+                    <input type="time" name="hora_inicio" id="hora_inicio" required>
+
+                    <label for="hora_fin">Horario</label>
+                    <input type="time" name="hora_fin" id="hora_fin" required>
+                    <label for="n_jugadores">Número de jugadores</label>
+                    <select name="n_jugadores" id="n_jugadores" required>
+                        <option value="57">5-7 Jugadores</option>
+                        <option value="711">7-11 Jugadores</option>
+                    </select>
+                    <button type="submit">Confirmar Reserva</button>
+                </form>
+            </div>
+            </form>
+            </div>
+            <!--Resumen de la Reserva-->
+            <div class="resumen_reserva">
+                <h2>Resumen de la Reserva</h2>
+                <p>Revisa los detalles seleccionados de tu reserva antes de confirmar.</p>
+                <ul>
+                    <li><strong>Fecha:</strong>Viernes, 5 de septiembre 2025</li>
+                    <li><strong>Horario:</strong>11:00 AM-12:00 PM</li>
+                    <li><strong>Jugadores:</strong>5-7 JUgadores</li>
+                    <li><strong>Duración:</strong>2 horas</li>
+                    <li><strong>precio Total:</strong>$150k</li>
+                    <li><strong>Ubicación:</strong>Cancha Principal</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!--Footer Contacto-->
+    <footer class="" footer_contacto>
+        <h2>Necesitas Ayuda? !Contáctanos!</h2>
+        <p>Nuestro equipo de soporte esta disponible para ayudarte
+            con cualquier duda o problema relacionado con tu reserva.</p>
+        <ul>
+            <li>+57 (309) 378-8903</li>
+            <li>support@footbalfieldbookings.com</li>
+        </ul>
     </footer>
 </body>
+
 </html>
