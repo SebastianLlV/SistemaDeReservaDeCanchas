@@ -1,103 +1,239 @@
+<!-- Página del sistema de reserva de canchas -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Soccer Fields - Reserva de Canchas</title>
+    <link rel="icon" href="img/soccerfieldslogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/pagos.css">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <header class="header">
-        <nav class="navbar">
+        <nav class="header__nav" aria-label="Menú principal">
             <!-- Logo -->
-            <div class="navbar__logo">Reserva de Canchas</div>
+            <a href="index.html" class="header__logo-link">
+                <img class="header__logo" src="img/soccerfieldslogo.png" height="32" width="32"
+                    alt="Logo Soccer Fields">
+            </a>
 
             <!-- Menú de navegación -->
-            <ul class="navbar__menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#calendario">Calendario</a></li>
-                <li><a href="#precios_paquetes">Precios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            <ul class="header__ul">
+                <li class="header__nav--item"><a href="#inicio" class="onscreen">Inicio</a></li>
+                <li class="header__nav--item"><a href="#formulario__reserva">Reserva</a></li>
+                <li class="header__nav--item"><a href="#contacto">Contacto</a></li>
+                <span class="hover-underline" aria-hidden="true"></span>
             </ul>
 
-            <!-- Botón estilo enlace (Book Now) -->
-            <a href="pagos.html" class="nav__book">Pagos</a>
+            <!-- Botón Hamburger (solo móvil) -->
+            <button class="nav__hamburger" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </nav>
     </header>
     <main>
-        <!--Detalles de reservación-->
-        <section id="pa" class="detalles_reserva">
-            <div class="f_reservacion">
-                <h2>Reserva tu Cancha</h2>
-                <p>Rellene los siguientes datos para completar.
-                    su reserva del campo de fútbol.</p>
-                <!--Formulario de la Reserva-->
-                <form action="">
-                    <label for="nombre_completo">Nombre</label>
-                    <input type="text" placeholder="Tu Nombre" name="nombre_completo" id="nombre_completo" required>
 
-                    <label for="email">Email</label>
-                    <input type="email" placeholder="tucorreo@ejemplo.com" name="email" id="email" required>
-
-                    <label for="numero">Número de Teléfono</label>
-                    <input type="tel" placeholder="3000000000" name="numero" id="numero" required>
-
-                    <label for="fecha">Fecha</label>
-                    <input type="date" name="fecha" id="fecha" required>
-
-                    <label for="duracion">Duración</label>
-                    <input type="number" name="duracion" min="1" max="8" id="duracion" required>
-                    <span>Hr</span>
-
-                    <label for="s_opcionales">Servicios Opcionales</label>
-                    <select name="s_opcionales" id="s_opcionales" required>
-                        <option value="rentar_equipamiento">Rentar Equipamiento</option>
-                        <option value="agua_extra">Agua Extra</option>
-                        <option value="petos">Petos</option>
-                        <option value="comida">Comida</option>
-                    </select>
-
-                    <label for="hora_inicio">Horario</label>
-                    <input type="time" name="hora_inicio" id="hora_inicio" required>
-
-                    <label for="hora_fin">Horario</label>
-                    <input type="time" name="hora_fin" id="hora_fin" required>
-                    <label for="n_jugadores">Número de jugadores</label>
-                    <select name="n_jugadores" id="n_jugadores" required>
-                        <option value="57">5-7 Jugadores</option>
-                        <option value="711">7-11 Jugadores</option>
-                    </select>
-                    <button type="submit">Confirmar Reserva</button>
-                </form>
-            </div>
-            </form>
-            </div>
-            <!--Resumen de la Reserva-->
-            <div class="resumen_reserva">
-                <h2>Resumen de la Reserva</h2>
-                <p>Revisa los detalles seleccionados de tu reserva antes de confirmar.</p>
-                <ul>
-                    <li><strong>Fecha:</strong>Viernes, 5 de septiembre 2025</li>
-                    <li><strong>Horario:</strong>11:00 AM-12:00 PM</li>
-                    <li><strong>Jugadores:</strong>5-7 JUgadores</li>
-                    <li><strong>Duración:</strong>2 horas</li>
-                    <li><strong>precio Total:</strong>$150k</li>
-                    <li><strong>Ubicación:</strong>Cancha Principal</li>
-                </ul>
+        <!-- Confirmación de reserva -->
+        <section id="inicio" class="reserva__hero" aria-labelledby="reserva-title">
+            <div class="reserva__texto--container">
+                <div class="reserva__texto">
+                    <h1 class="reserva__title">Completa Tu Reserva</h1>
+                    <p>Reserva fácilmente tu cancha de fútbol preferida. Sigue los pasos para asegurar tu lugar en un
+                        partido inolvidable.</p>
+                </div>
+                <div class="reserva__imagen">
+                    <img src="img/cancha_vista_aerea.png" alt="Cancha de fútbol en vista aérea" width="1344"
+                        height="768">
+                </div>
             </div>
         </section>
+
+        <!--Detalles de reservación-->
+        <section id="formulario__reserva" class="formulario__reserva">
+            <div class="formulario__container">
+                <div class="formulario__container--text">
+                    <h2 class="formulario__title">Reserva Tu Cancha</h2>
+                    <p class="formulario__description">Rellene los siguientes datos para completar su reserva del campo
+                        de fútbol.</p>
+                </div>
+                <!--Formulario de la Reserva-->
+                <form class="formulario" action="#" method="post">
+                    <div class="flex-container-column">
+                        <label for="nombre_completo">Nombre Completo</label>
+                        <input type="text" placeholder="Tu Nombre" name="nombre_completo" id="nombre_completo" required>
+                    </div>
+
+                    <div class="flex-container-column">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" placeholder="tucorreo@ejemplo.com" name="email" id="email" required>
+                    </div>
+
+                    <div class="flex-container-column">
+                        <label for="telefono">Número de Teléfono</label>
+                        <input type="tel" placeholder="3000000000" name="telefono" id="telefono" required>
+                    </div>
+
+                    <!-- Fecha + Horario (fila con 2 columnas) -->
+                    <div class="flex-container-row form-inputs-container">
+                        <div class="flex-container-column">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" name="fecha" id="fecha" required>
+                        </div>
+
+                        <div class="flex-container-column">
+                            <label for="hora_inicio">Horario de Inicio</label>
+                            <select name="hora_inicio" id="hora_inicio" required>
+                                <option value="" disabled selected>Seleccione un horario</option>
+                                <option value="8">08:00 AM</option>
+                                <option value="9">09:00 AM</option>
+                                <option value="10">10:00 AM</option>
+                                <option value="11">11:00 AM</option>
+                                <option value="12">12:00 PM</option>
+                                <option value="13">01:00 PM</option>
+                                <option value="14">02:00 PM</option>
+                                <option value="15">03:00 PM</option>
+                                <option value="16">04:00 PM</option>
+                                <option value="17">05:00 PM</option>
+                                <option value="18">06:00 PM</option>
+                                <option value="19">07:00 PM</option>
+                                <option value="20">08:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Duración + Número de jugadores -->
+                    <div class="flex-container-row form-inputs-container">
+                        <div class="flex-container-column">
+                            <label for="duracion">Duración</label>
+                            <select name="duracion" id="duracion" required>
+                                <option value="1">1 Hora</option>
+                                <option value="2">2 Horas</option>
+                                <option value="3">3 Horas</option>
+                            </select>
+                        </div>
+
+                        <div class="flex-container-column">
+                            <label for="numero_jugadores">Número de Jugadores</label>
+                            <select name="numero_jugadores" id="numero_jugadores" required>
+                                <option value="5_7">5-7 Jugadores</option>
+                                <option value="7_11">7-11 Jugadores</option>
+                                <option value="10_14">10-14 Jugadores</option>
+                                <option value="14_18">14-18 Jugadores</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex-container-column">
+                        <label for="paquete">Paquete</label>
+                        <select name="paquete" id="paquete" required>
+                            <option value="no_aplica">No Aplica</option>
+                            <option value="medio_dia">Medio Día</option>
+                            <option value="dia_completo">Día Completo</option>
+                        </select>
+                    </div>
+
+                    <div class="flex-container-column">
+                        <label for="servicios_opcionales">Servicios Opcionales</label>
+                        <select name="servicios_opcionales" id="servicios_opcionales">
+                            <option value="" disabled selected>Seleccione un servicio (Opcional)</option>
+                            <option value="rentar_equipamiento">Rentar Equipamiento</option>
+                            <option value="agua_extra">Agua Extra</option>
+                            <option value="petos">Petos</option>
+                            <option value="comida">Comida</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="formulario__boton">Confirmar Reserva</button>
+                </form>
+            </div>
+            <!--Resumen de la Reserva-->
+            <div class="resumen__reserva">
+                <div class="resumen__reserva--text">
+                    <h2 class="resumen__titulo">Resumen De La Reserva</h2>
+                    <p class="resumen__descripcion">Revisa los detalles seleccionados de tu reserva antes de confirmar.
+                    </p>
+                </div>
+                <ul class="resumen__lista">
+                    <li class="resumen__item flex-container-row-summary">
+                        <i class="fa-solid fa-calendar-days resumen__icon" aria-hidden="true"></i>
+                        <span class="resumen__texto"><strong>Fecha:</strong> Viernes, 5 de septiembre de 2025</span>
+                    </li>
+                    <li class="resumen__item flex-container-row-summary">
+                        <i class="fa-solid fa-clock resumen__icon" aria-hidden="true"></i>
+                        <span class="resumen__texto"><strong>Horario:</strong> 11:00 AM - 12:00 PM</span>
+                    </li>
+                    <li class="resumen__item flex-container-row-summary">
+                        <i class="fa-solid fa-users resumen__icon" aria-hidden="true"></i>
+                        <span class="resumen__texto"><strong>Jugadores:</strong> 5-7 jugadores</span>
+                    </li>
+                    <li class="resumen__item flex-container-row-summary">
+                        <i class="fa-solid fa-hourglass-half resumen__icon" aria-hidden="true"></i>
+                        <span class="resumen__texto"><strong>Duración:</strong> 2 horas</span>
+                    </li>
+                    <li class="resumen__item flex-container-row-summary">
+                        <i class="fa-solid fa-dollar-sign resumen__icon" aria-hidden="true"></i>
+                        <span class="resumen__texto"><strong>Precio Total:</strong> $150.00</span>
+                    </li>
+                    <li class="resumen__item flex-container-row-summary">
+                        <i class="fa-solid fa-gift resumen__icon" aria-hidden="true"></i>
+                        <span class="resumen__texto"><strong>Paquete:</strong> Paquete Básico / Premium</span>
+                    </li>
+                    <li class="resumen__item flex-container-row-summary">
+                        <i class="fa-solid fa-bell-concierge resumen__icon" aria-hidden="true"></i>
+                        <span class="resumen__texto"><strong>Servicios Adicionales:</strong> Ej. Bebidas,
+                            Equipamiento</span>
+                    </li>
+                    <li class="resumen__item flex-container-row-summary">
+                        <i class="fa-solid fa-location-dot resumen__icon" aria-hidden="true"></i>
+                        <span class="resumen__texto"><strong>Ubicación de la Cancha:</strong> Cancha Principal</span>
+                    </li>
+                </ul>
+                <div class="separation_bar"></div>
+                <div class="resumen__mapa">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62667.481335709665!2d-74.85917463810857!3d10.984676589094166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d44d12ae605%3A0x2633844581b917b2!2sBarranquilla%2C%20Atlantico!5e0!3m2!1sen!2sco!4v1757264559793!5m2!1sen!2sco"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa de ubicación" aria-label="Mapa de ubicación de la cancha"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <h2 class="contacto__titulo center">¿Necesitas Ayuda? ¡Contáctanos!</h2>
+            <p class="contacto__descripcion center">
+                Nuestro equipo de soporte está disponible para ayudarte
+                con cualquier duda o problema relacionado con tu reserva.
+            </p>
+
+            <ul class="contacto__info">
+                <li class="contacto__item">
+                    <i class="fa-solid fa-phone contacto__icon" aria-hidden="true"></i>
+                    <a href="tel:+573093788903" class="contacto__texto">+57 (309) 378-8903</a>
+                </li>
+                <li class="contacto__item">
+                    <i class="fa-solid fa-envelope contacto__icon" aria-hidden="true"></i>
+                    <a href="mailto:info@soccerfields.com" class="contacto__texto">
+                        info@soccerfields.com
+                    </a>
+                </li>
+            </ul>
+        </section>
     </main>
+
     <!--Footer Contacto-->
-    <footer class="" footer_contacto>
-        <h2>Necesitas Ayuda? !Contáctanos!</h2>
-        <p>Nuestro equipo de soporte esta disponible para ayudarte
-            con cualquier duda o problema relacionado con tu reserva.</p>
-        <ul>
-            <li>+57 (309) 378-8903</li>
-            <li>support@footbalfieldbookings.com</li>
-        </ul>
+    <footer role="contentinfo" class="footer">
+        <p class="center">&copy; <span id="year"></span> Soccer Fields. Todos los derechos reservados.</p>
     </footer>
+    <script src="js/hamburgerMenuScripts.js"></script>
+    <script src="js/slidingHoverEffectPagos.js"></script>
+    <script src="js/activeLinkObserver.js"></script>
+    <script src="js/updateYear.js"></script>
 </body>
 
 </html>
