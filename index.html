@@ -1,20 +1,26 @@
-<!-- Página del sistema de reserva de canchas -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soccer Fields - Reserva de Canchas</title>
+  <title>Soccer Fields - Reserva de Canchas de Fútbol en Barranquilla</title>
+  <meta name="description" content="Reserva canchas de fútbol en Barranquilla de forma rápida y sencilla. Canchas con iluminación LED, estacionamiento, duchas modernas y césped sintético profesional.">
+  <meta name="keywords" content="reserva de canchas, canchas de fútbol, Barranquilla, alquiler de canchas, soccer fields, fútbol 5, fútbol sintético">
+  <meta name="author" content="Sebastian Llanos, Daniel Lopez & Carlos Villalobos">
+  <meta name="robots" content="index, follow">
   <link rel="icon" href="img/soccerfieldslogo.png" type="image/x-icon">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" role="banner">
     <nav class="header__nav" aria-label="Menú principal">
       <!-- Logo -->
-      <img class="header__logo" src="img/soccerfieldslogo.png" height="32" width="32">
+      <a href="index.html" class="header__logo-link" aria-label="Ir al inicio">
+        <img class="header__logo" src="img/soccerfieldslogo.png" height="32" width="32" alt="Soccer Fields"
+          loading="lazy">
+      </a>
 
       <!-- Menú de navegación -->
       <ul class="header__ul">
@@ -23,16 +29,16 @@
         <li class="header__nav--item"><a href="#caracteristicas">Características</a></li>
         <li class="header__nav--item"><a href="#precios_paquetes">Precios</a></li>
         <li class="header__nav--item"><a href="#contacto">Contacto</a></li>
-        <span class="hover-underline"></span>
+        <span class="hover-underline" aria-hidden="true"></span>
         <li class="header__nav--item"><a href="pagos.html" class="header__button">Pagos</a></li>
       </ul>
 
       <!-- Botón Hamburger (solo móvil) -->
-      <div class="nav__hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+      <button class="nav__hamburger" aria-label="Abrir menú" aria-controls="menu-lista" aria-expanded="false">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
     </nav>
   </header>
 
@@ -43,15 +49,16 @@
       <p class="hero__subtitle center">
         Encuentra y reserva la cancha perfecta para tu próximo partido o entrenamiento en tan solo unos clics.</span>
       </p>
-      <a href="pagos.html" class="hero__cta">Reservar Ahora</a>
+      <a href="pagos.html" class="hero__cta" role="button" aria-label="Reservar ahora en la página de pagos">Reservar
+        Ahora</a>
     </section>
 
     <!-- Tabla de horarios -->
     <section id="disponibilidad" class="disponibilidad" aria-labelledby="disponibilidad-title">
-      <h2 class="disponibilidad__titulo center">Disponibilidad De Canchas</h2>
+      <h2 id="disponibilidad-title" class="disponibilidad__titulo center">Disponibilidad De Canchas</h2>
       <div class="disponibilidad__contenedor">
         <h3 class="disponibilidad__subtitulo">Horario de Hoy (Lunes, 10 de junio)</h3>
-        <p class="disponibilidad__descripcion">Consulta los últimos espacios libres disponibles para reservar. </p>
+        <p class="disponibilidad__descripcion">Consulta los últimos espacios libres disponibles para reservar.</p>
         <table>
           <thead>
             <tr>
@@ -62,55 +69,68 @@
           <tbody>
             <tr>
               <td>08:00 AM - 09:00 AM</td>
-              <td><button class="estado_disponible">Disponible</button></td>
+              <td><button class="estado_disponible" aria-label="Reservar franja 08:00 AM a 09:00 AM">Disponible</button>
+              </td>
             </tr>
             <tr>
               <td>09:00 AM - 10:00 AM</td>
-              <td><button class="estado_reservado" disabled>Reservado</button></td>
+              <td><button class="estado_reservado" disabled aria-disabled="true"
+                  aria-label="Franja 09:00 AM a 10:00 AM reservada">Reservado</button></td>
             </tr>
             <tr>
               <td>10:00 AM - 11:00 AM</td>
-              <td><button class="estado_disponible">Disponible</button></td>
+              <td><button class="estado_disponible" aria-label="Reservar franja 10:00 AM a 11:00 AM">Disponible</button>
+              </td>
             </tr>
             <tr>
               <td>11:00 AM - 12:00 PM</td>
-              <td><button class="estado_reservado" disabled>Reservado</button></td>
+              <td><button class="estado_reservado" disabled aria-disabled="true"
+                  aria-label="Franja 11:00 AM a 12:00 PM reservada">Reservado</button></td>
             </tr>
             <tr>
               <td>12:00 PM - 01:00 PM</td>
-              <td><button class="estado_disponible">Disponible</button></td>
+              <td><button class="estado_disponible" aria-label="Reservar franja 12:00 PM a 01:00 PM">Disponible</button>
+              </td>
             </tr>
             <tr>
               <td>01:00 PM - 02:00 PM</td>
-              <td><button class="estado_reservado" disabled>Reservado</button></td>
+              <td><button class="estado_reservado" disabled aria-disabled="true"
+                  aria-label="Franja 01:00 PM a 02:00 PM reservada">Reservado</button></td>
             </tr>
             <tr>
               <td>02:00 PM - 03:00 PM</td>
-              <td><button class="estado_disponible">Disponible</button></td>
+              <td><button class="estado_disponible" aria-label="Reservar franja 02:00 PM a 03:00 PM">Disponible</button>
+              </td>
             </tr>
             <tr>
               <td>03:00 PM - 04:00 PM</td>
-              <td><button class="estado_reservado" disabled>Reservado</button></td>
+              <td><button class="estado_reservado" disabled aria-disabled="true"
+                  aria-label="Franja 03:00 PM a 04:00 PM reservada">Reservado</button></td>
             </tr>
             <tr>
               <td>04:00 PM - 05:00 PM</td>
-              <td><button class="estado_disponible">Disponible</button></td>
+              <td><button class="estado_disponible" aria-label="Reservar franja 04:00 PM a 05:00 PM">Disponible</button>
+              </td>
             </tr>
             <tr>
               <td>05:00 PM - 06:00 PM</td>
-              <td><button class="estado_disponible">Disponible</button></td>
+              <td><button class="estado_disponible" aria-label="Reservar franja 05:00 PM a 06:00 PM">Disponible</button>
+              </td>
             </tr>
             <tr>
               <td>06:00 PM - 07:00 PM</td>
-              <td><button class="estado_disponible">Disponible</button></td>
+              <td><button class="estado_disponible" aria-label="Reservar franja 06:00 PM a 07:00 PM">Disponible</button>
+              </td>
             </tr>
             <tr>
               <td>07:00 PM - 08:00 PM</td>
-              <td><button class="estado_disponible">Disponible</button></td>
+              <td><button class="estado_disponible" aria-label="Reservar franja 07:00 PM a 08:00 PM">Disponible</button>
+              </td>
             </tr>
             <tr>
               <td>08:00 PM - 09:00 PM</td>
-              <td><button class="estado_disponible">Disponible</button></td>
+              <td><button class="estado_disponible" aria-label="Reservar franja 08:00 PM a 09:00 PM">Disponible</button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -120,83 +140,102 @@
     <!-- Características -->
     <section id="caracteristicas" class="caracteristicas" aria-labelledby="caracteristicas-title">
       <h2 class="caracteristicas__title center">Nuestras instalaciones</h2>
-      <div class="caracteristicas__contenedor_cards">
-        <div class="caracteristicas__cards reveal">
-          <img src="img/electricidad-icon.svg" alt="Icono que representa iluminación" width="48" height="48">
+
+      <div class="caracteristicas__contenedor_cards" role="list">
+
+        <article class="caracteristicas__cards reveal" role="listitem">
+          <img src="img/icons/electricidad-icon.svg" alt="Iluminación LED de última generación" width="48" height="48"
+            loading="lazy">
           <h3 class="center">Iluminación premium</h3>
           <p class="center">Iluminación LED de última generación para que disfrutes tus partidos en la noche.</p>
-        </div>
-        <div class="caracteristicas__cards reveal">
-          <img src="img/auto-icon.svg" alt="Icono que representa estacionamiento" width="48" height="48">
+        </article>
+
+        <article class="caracteristicas__cards reveal" role="listitem">
+          <img src="img/icons/auto-icon.svg" alt="Espacio de estacionamiento seguro" width="48" height="48"
+            loading="lazy">
           <h3 class="center">Estacionamiento amplio</h3>
           <p class="center">Espacios disponibles para que traigas tu vehículo con seguridad.</p>
-        </div>
-        <div class="caracteristicas__cards reveal">
-          <img src="img/ducha-icon.svg" alt="Icono que representa duchas" width="48" height="48">
+        </article>
+
+        <article class="caracteristicas__cards reveal" role="listitem">
+          <img src="img/icons/ducha-icon.svg" alt="Duchas modernas y limpias" width="48" height="48" loading="lazy">
           <h3 class="center">Duchas modernas</h3>
           <p class="center">Instalaciones cómodas y limpias para después del partido.</p>
-        </div>
-        <div class="caracteristicas__cards reveal">
-          <img src="img/viento-icon.svg" alt="Icono que representa grama" width="48" height="48">
+        </article>
+
+        <article class="caracteristicas__cards reveal" role="listitem">
+          <img src="img/icons/viento-icon.svg" alt="Césped sintético profesional" width="48" height="48" loading="lazy">
           <h3 class="center">Grama de alta calidad</h3>
           <p class="center">Cancha con césped sintético de nivel profesional.</p>
-        </div>
+        </article>
+
       </div>
     </section>
 
     <!-- Precios y paquetes -->
     <section id="precios_paquetes" class="precios" aria-labelledby="precios-title">
       <h2 class="precios__title center">Precios y Paquetes</h2>
-      <div class="precios__card_container">
-        <div class="precios__card reveal">
+
+      <div class="precios__card_container" role="list">
+
+        <article class="precios__card reveal" role="listitem">
           <h3>Valor por Hora</h3>
           <p>Ideal para partidos casuales y entrenamientos.</p>
-          <span aria-label="Precio 120 mil pesos por hora">$120K/hr</span>
+          <p><span class="sr-only">Precio:</span><span aria-label="Precio 120 mil pesos por hora">$120K/hr</span></p>
           <ul>
             <li>1 hora de juego</li>
             <li>Iluminación incluida</li>
             <li>Acceso a duchas</li>
           </ul>
-          <button href="pagos.html">Seleccionar Plan</button>
-        </div>
-        <div class="precios__card central reveal">
-          <button>Popular</button>
+          <button role="button" aria-label="Seleccionar plan Valor por Hora">Seleccionar Plan</button>
+        </article>
+
+        <article class="precios__card central reveal" role="listitem">
+          <button aria-hidden="true">Popular</button>
           <h3>Paquete Medio Día</h3>
           <p>Perfecto para torneos cortos y prácticas extendidas.</p>
-          <span aria-label="Precio 400 mil pesos">$400K</span>
+          <p><span class="sr-only">Precio:</span><span aria-label="Precio 400 mil pesos">$400K</span></p>
           <ul>
             <li>6 horas de juego</li>
             <li>Estacionamiento incluido</li>
             <li>Acceso a duchas</li>
           </ul>
-          <button href="pagos.html">Seleccionar Plan</button>
-        </div>
-        <div class="precios__card reveal">
+          <button role="button" aria-label="Seleccionar plan Paquete Medio Día">Seleccionar Plan</button>
+        </article>
+
+        <article class="precios__card reveal" role="listitem">
           <h3>Paquete Día Completo</h3>
           <p>La mejor opción para eventos deportivos y campeonatos.</p>
-          <span aria-label="Precio 650 mil pesos">$650K</span>
+          <p><span class="sr-only">Precio:</span><span aria-label="Precio 650 mil pesos">$650K</span></p>
           <ul>
             <li>12 horas de juego</li>
             <li>Iluminación incluida</li>
             <li>Estacionamiento incluido</li>
           </ul>
-          <button href="pagos.html">Seleccionar Plan</button>
-        </div>
+          <button role="button" aria-label="Seleccionar plan Paquete Día Completo">Seleccionar Plan</button>
+        </article>
+
       </div>
     </section>
 
     <!-- Contacto -->
     <section id="contacto" class="contacto" aria-labelledby="contacto-title">
       <h2 class="contacto__title center">Contáctanos</h2>
+
       <div class="contacto__card_container">
-        <div class="contacto__card">
+
+        <!-- Formulario -->
+        <div class="contacto__card" aria-labelledby="formulario-title">
           <h3>Envíanos un Mensaje</h3>
-          <form action="" aria-label="Formulario de contacto">
+          <form action="" aria-describedby="form-ayuda">
+            <p id="form-ayuda" class="sr-only">Todos los campos son obligatorios</p>
+
             <label for="nombre_completo">Nombre</label>
-            <input type="text" placeholder="Tu Nombre" name="nombre_completo" id="nombre_completo" required>
+            <input type="text" placeholder="Tu Nombre" name="nombre_completo" id="nombre_completo" required
+              autocomplete="name" />
 
             <label for="email">Email</label>
-            <input type="email" placeholder="tu@correo.com" name="email" id="email" required>
+            <input type="email" placeholder="tu@correo.com" name="email" id="email" required autocomplete="email" inputmode="email" />
 
             <label for="mensaje">Mensaje</label>
             <textarea name="mensaje" id="mensaje" placeholder="Tu mensaje aquí..." required></textarea>
@@ -204,32 +243,43 @@
             <button type="submit">Enviar Mensaje</button>
           </form>
         </div>
-        <div class="contacto__card">
-          <h3>Información de Contacto</h3>
+
+        <!-- Información -->
+        <div class="contacto__card" aria-labelledby="info-contacto-title">
+          <h3 id="info-contacto-title">Información de Contacto</h3>
           <ul>
-            <li><a href="tel:+573006784972">+57 300 678 4972</a></li>
-            <li><a href="mailto:info@soccerfields.com">info@soccerfields.com</a></li>
             <li>
-              <address>Calle 122 #45-34a, Barranquilla</address>
+              <a href="tel:+573006784972" aria-label="Llamar al número +57 300 678 4972">+57 300 678 4972</a>
+            </li>
+            <li>
+              <a href="mailto:info@soccerfields.com"
+                aria-label="Enviar un correo a info@soccerfields.com">info@soccerfields.com</a>
+            </li>
+            <li>
+              <address aria-label="Dirección física">Calle 122 #45-34a, Barranquilla</address>
             </li>
           </ul>
+
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62667.481335709665!2d-74.85917463810857!3d10.984676589094166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d44d12ae605%3A0x2633844581b917b2!2sBarranquilla%2C%20Atlantico!5e0!3m2!1sen!2sco!4v1757264559793!5m2!1sen!2sco"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa de ubicación"></iframe>
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa con la ubicación de Soccer Fields en Barranquilla">
+          </iframe>
         </div>
+
+      </div>
     </section>
   </main>
 
   <footer role="contentinfo" class="footer">
     <p class="center">&copy; <span id="year"></span> Soccer Fields. Todos los derechos reservados.</p>
   </footer>
-
-  <script src="js/hamburgerMenuScripts.js"></script>
-  <script src="js/slidingHoverEffect.js"></script>
-  <script src="js/activeLinkObserver.js"></script>
-  <script src="js/showCards.js"></script>
-  <script src="js/updateYear.js"></script>
+  <!-- SCRIPTS -->
+  <script src="js/effects/hamburgerMenuScripts.js"></script>
+  <script src="js/effects/slidingHoverEffect.js"></script>
+  <script src="js/effects/activeLinkObserver.js"></script>
+  <script src="js/effects/showCards.js"></script>
+  <script src="js/effects/updateYear.js"></script>
 </body>
 
 </html>
