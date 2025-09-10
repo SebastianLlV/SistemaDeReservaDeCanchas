@@ -75,6 +75,14 @@ iframe {
 }
 
 /* || UTILITY CLASSES || */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .onscreen {
     color: #008A2EFF;
     font-weight: 400;
@@ -546,7 +554,7 @@ button.estado_reservado {
     margin-right: 0.5rem;
 }
 
-.precios__card button[href] {
+.precios__card button {
     background-color: #000;
     color: #fff;
     border: none;
@@ -745,6 +753,7 @@ button.estado_reservado {
         height: 24px;
         cursor: pointer;
         margin-right: 2rem;
+        border: none;
     }
 
     .header__nav--item {

@@ -1,14 +1,18 @@
-<!-- Página del sistema de reserva de canchas -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soccer Fields - Reserva de Canchas</title>
+    <title>Soccer Fields - Reserva de Canchas de Fútbol en Barranquilla</title>
+    <meta name="description"
+        content="Reserva canchas de fútbol en Barranquilla de forma rápida y sencilla. Canchas con iluminación LED, estacionamiento, duchas modernas y césped sintético profesional.">
+    <meta name="keywords"
+        content="reserva de canchas, canchas de fútbol, Barranquilla, alquiler de canchas, soccer fields, fútbol 5, fútbol sintético">
+    <meta name="author" content="Sebastian Llanos, Daniel Lopez & Carlos Villalobos">
+    <meta name="robots" content="index, follow">
     <link rel="icon" href="img/soccerfieldslogo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/pagos.css">
-    <!-- Font Awesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -17,8 +21,7 @@
         <nav class="header__nav" aria-label="Menú principal">
             <!-- Logo -->
             <a href="index.html" class="header__logo-link">
-                <img class="header__logo" src="img/soccerfieldslogo.png" height="32" width="32"
-                    alt="Logo Soccer Fields">
+                <img class="header__logo" src="img/soccerfieldslogo.png" height="32" width="32" alt="Logo Soccer Fields" loading="lazy">
             </a>
 
             <!-- Menú de navegación -->
@@ -30,15 +33,14 @@
             </ul>
 
             <!-- Botón Hamburger (solo móvil) -->
-            <button class="nav__hamburger" aria-label="Abrir menú de navegación">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <button class="nav__hamburger" aria-label="Abrir menú" aria-controls="menu-lista" aria-expanded="false">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
             </button>
         </nav>
     </header>
     <main>
-
         <!-- Confirmación de reserva -->
         <section id="inicio" class="reserva__hero" aria-labelledby="reserva-title">
             <div class="reserva__texto--container">
@@ -48,8 +50,8 @@
                         partido inolvidable.</p>
                 </div>
                 <div class="reserva__imagen">
-                    <img src="img/cancha_vista_aerea.png" alt="Cancha de fútbol en vista aérea" width="1344"
-                        height="768">
+                    <img src="img/cancha_vista_aerea.png" alt="Vista aérea de una cancha de fútbol profesional" width="1344"
+                        height="768" loading="lazy">
                 </div>
             </div>
         </section>
@@ -230,10 +232,10 @@
     <footer role="contentinfo" class="footer">
         <p class="center">&copy; <span id="year"></span> Soccer Fields. Todos los derechos reservados.</p>
     </footer>
-    <script src="js/hamburgerMenuScripts.js"></script>
-    <script src="js/slidingHoverEffectPagos.js"></script>
-    <script src="js/activeLinkObserver.js"></script>
-    <script src="js/updateYear.js"></script>
+    <script src="js/effects/hamburgerMenuScripts.js"></script>
+    <script src="js/effects/slidingHoverEffectPagos.js"></script>
+    <script src="js/effects/activeLinkObserver.js"></script>
+    <script src="js/effects/updateYear.js"></script>
 </body>
 
 </html>
