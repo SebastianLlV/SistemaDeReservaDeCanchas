@@ -76,11 +76,11 @@ iframe {
 
 /* || UTILITY CLASSES || */
 .sr-only {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .onscreen {
@@ -347,6 +347,106 @@ a:any-link {
     border-collapse: collapse;
 }
 
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Date input */
+#selector-dia {
+    width: 100%;
+    height: 40px;
+    padding: 0 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #fff;
+    color: #111827;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    transition: border-color .15s ease, box-shadow .2s ease, transform .2s ease, background .2s ease;
+
+    text-align: center;
+    text-align-last: center;
+
+    animation: popIn .35s ease-out both;
+}
+
+/* Center inner date fields (WebKit/Blink) */
+#selector-dia::-webkit-datetime-edit-fields-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#selector-dia::-webkit-datetime-edit,
+#selector-dia::-webkit-datetime-edit-month-field,
+#selector-dia::-webkit-datetime-edit-day-field,
+#selector-dia::-webkit-datetime-edit-year-field,
+#selector-dia::-webkit-datetime-edit-text {
+    text-align: center;
+}
+
+/* Calendar icon */
+#selector-dia::-webkit-calendar-picker-indicator {
+    opacity: .85;
+    cursor: pointer;
+    transition: transform .15s ease, opacity .15s ease, filter .15s ease;
+    filter: hue-rotate(85deg) saturate(120%) brightness(.95);
+}
+
+#selector-dia:hover::-webkit-calendar-picker-indicator {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* Hover/focus */
+#selector-dia:hover {
+    transform: translateY(-1px);
+}
+
+#selector-dia:focus {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, .15), 0 6px 18px rgba(0, 0, 0, .06);
+    outline: none;
+    background: #ecfdf5;
+}
+
+/* Error message below the input */
+#selector-dia-error {
+    display: block;
+    margin-top: .35rem;
+    font-size: .875rem;
+    color: #dc2626;
+    line-height: 1.2;
+}
+
+#selector-dia-error:not([hidden]) {
+    animation: fadeUp .25s ease-out both;
+}
+
+/* Animations */
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .disponibilidad__contenedor th,
 .disponibilidad__contenedor td {
     text-align: left;
@@ -388,6 +488,27 @@ button.estado_reservado {
     opacity: 0.7;
     font-size: var(--FS-r);
 }
+
+#slots-tbody>tr {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: slot-slide-in 320ms cubic-bezier(.2, .8, .2, 1) forwards;
+    animation-delay: calc(var(--i, 0) * 70ms);
+    will-change: transform, opacity;
+}
+
+@keyframes slot-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* || SECCION CARACTERISTICAS ||*/
 .caracteristicas {

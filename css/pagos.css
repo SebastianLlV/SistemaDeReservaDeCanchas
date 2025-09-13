@@ -303,6 +303,10 @@ a:any-link {
 }
 
 /* || FORMULARIO ||*/
+#servicios_opcionales {
+    height: 30%;
+}
+
 .formulario__reserva {
     scroll-margin-top: 2rem;
     padding: var(--PADDING-TITLES);
@@ -578,12 +582,81 @@ form select {
     line-height: 1.55;
 }
 
-
-/* Microtexto (si tuvieses notas o errores) */
-.help,
-.help-error {
-    font-size: var(--FXS-r);
+/* Mensaje de error */
+#pago-error[hidden] {
+    display: none;
 }
+
+#pago-error {
+    display: block;
+    margin-top: .5rem;
+    font-size: .95rem;
+    line-height: 1.3;
+    color: #b42318;
+    background: #fff4f2;
+    border: 1px solid #ffd1ca;
+    border-left: 4px solid #e11900;
+    padding: .6rem .75rem .6rem 2.25rem;
+    border-radius: .5rem;
+    position: relative;
+}
+
+
+#pago-error::before {
+    content: "⚠️";
+    position: absolute;
+    left: .6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+}
+
+
+@keyframes pop-in {
+    0% {
+        transform: scale(.98);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(-4px);
+    }
+
+    30% {
+        transform: translateX(4px);
+    }
+
+    45% {
+        transform: translateX(-3px);
+    }
+
+    60% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
+}
+
+/* apply when shown */
+#pago-error.is-visible {
+    animation: pop-in .18s ease-out, shake .5s ease-in-out .18s;
+}
+
 
 /* || CONTACTO ||*/
 .contacto {

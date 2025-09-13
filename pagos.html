@@ -21,7 +21,8 @@
         <nav class="header__nav" aria-label="Menú principal">
             <!-- Logo -->
             <a href="index.html" class="header__logo-link">
-                <img class="header__logo" src="img/soccerfieldslogo.png" height="32" width="32" alt="Logo Soccer Fields" loading="lazy">
+                <img class="header__logo" src="img/soccerfieldslogo.png" height="32" width="32" alt="Logo Soccer Fields"
+                    loading="lazy">
             </a>
 
             <!-- Menú de navegación -->
@@ -50,8 +51,8 @@
                         partido inolvidable.</p>
                 </div>
                 <div class="reserva__imagen">
-                    <img src="img/cancha_vista_aerea.png" alt="Vista aérea de una cancha de fútbol profesional" width="1344"
-                        height="768" loading="lazy">
+                    <img src="img/cancha_vista_aerea.png" alt="Vista aérea de una cancha de fútbol profesional"
+                        width="1344" height="768" loading="lazy">
                 </div>
             </div>
         </section>
@@ -63,6 +64,7 @@
                     <h2 class="formulario__title">Reserva Tu Cancha</h2>
                     <p class="formulario__description">Rellene los siguientes datos para completar su reserva del campo
                         de fútbol.</p>
+                    <span id="pago-error" class="error" hidden aria-live="polite"></span>
                 </div>
                 <!--Formulario de la Reserva-->
                 <form class="formulario" action="#" method="post">
@@ -123,6 +125,7 @@
                         <div class="flex-container-column">
                             <label for="numero_jugadores">Número de Jugadores</label>
                             <select name="numero_jugadores" id="numero_jugadores" required>
+                                <option value="" disabled selected>Seleccione un servicio (Opcional)</option>
                                 <option value="5_7">5-7 Jugadores</option>
                                 <option value="7_11">7-11 Jugadores</option>
                                 <option value="10_14">10-14 Jugadores</option>
@@ -142,7 +145,7 @@
 
                     <div class="flex-container-column">
                         <label for="servicios_opcionales">Servicios Opcionales</label>
-                        <select name="servicios_opcionales" id="servicios_opcionales">
+                        <select name="servicios_opcionales" id="servicios_opcionales" multiple size="4">
                             <option value="" disabled selected>Seleccione un servicio (Opcional)</option>
                             <option value="rentar_equipamiento">Rentar Equipamiento</option>
                             <option value="agua_extra">Agua Extra</option>
@@ -164,36 +167,35 @@
                 <ul class="resumen__lista">
                     <li class="resumen__item flex-container-row-summary">
                         <i class="fa-solid fa-calendar-days resumen__icon" aria-hidden="true"></i>
-                        <span class="resumen__texto"><strong>Fecha:</strong> Viernes, 5 de septiembre de 2025</span>
+                        <p class="resumen__texto"><strong>Fecha:</strong> <span id="resumen-fecha"></span></p>
                     </li>
                     <li class="resumen__item flex-container-row-summary">
                         <i class="fa-solid fa-clock resumen__icon" aria-hidden="true"></i>
-                        <span class="resumen__texto"><strong>Horario:</strong> 11:00 AM - 12:00 PM</span>
+                        <p class="resumen__texto"><strong>Horario:</strong> <span id="resumen-horario"></span></p>
                     </li>
                     <li class="resumen__item flex-container-row-summary">
                         <i class="fa-solid fa-users resumen__icon" aria-hidden="true"></i>
-                        <span class="resumen__texto"><strong>Jugadores:</strong> 5-7 jugadores</span>
+                        <p class="resumen__texto"><strong>Jugadores:</strong> <span id="resumen-jugadores"></span></p>
                     </li>
                     <li class="resumen__item flex-container-row-summary">
                         <i class="fa-solid fa-hourglass-half resumen__icon" aria-hidden="true"></i>
-                        <span class="resumen__texto"><strong>Duración:</strong> 2 horas</span>
+                        <p class="resumen__texto"><strong>Duración:</strong> <span id="resumen-duracion"></span></p>
                     </li>
                     <li class="resumen__item flex-container-row-summary">
                         <i class="fa-solid fa-dollar-sign resumen__icon" aria-hidden="true"></i>
-                        <span class="resumen__texto"><strong>Precio Total:</strong> $150.00</span>
+                        <p class="resumen__texto"><strong>Precio Total:</strong> <span id="resumen-precio"></span></p>
                     </li>
                     <li class="resumen__item flex-container-row-summary">
                         <i class="fa-solid fa-gift resumen__icon" aria-hidden="true"></i>
-                        <span class="resumen__texto"><strong>Paquete:</strong> Paquete Básico / Premium</span>
+                        <p class="resumen__texto"><strong>Paquete:</strong> <span id="resumen-paquete"></span></p>
                     </li>
                     <li class="resumen__item flex-container-row-summary">
                         <i class="fa-solid fa-bell-concierge resumen__icon" aria-hidden="true"></i>
-                        <span class="resumen__texto"><strong>Servicios Adicionales:</strong> Ej. Bebidas,
-                            Equipamiento</span>
+                        <p class="resumen__texto"><strong>Servicios Adicionales:</strong> <span id="resumen-servicios"></span></p>
                     </li>
                     <li class="resumen__item flex-container-row-summary">
                         <i class="fa-solid fa-location-dot resumen__icon" aria-hidden="true"></i>
-                        <span class="resumen__texto"><strong>Ubicación de la Cancha:</strong> Cancha Principal</span>
+                        <p class="resumen__texto"><strong>Ubicación de la Cancha:</strong> Cancha Principal</p>
                     </li>
                 </ul>
                 <div class="separation_bar"></div>
@@ -235,7 +237,8 @@
     <script src="js/effects/hamburgerMenuScripts.js"></script>
     <script src="js/effects/slidingHoverEffectPagos.js"></script>
     <script src="js/effects/activeLinkObserver.js"></script>
-    <script src="js/effects/updateYear.js"></script>
+    <script src="js/effects/updateYear.js"></script>\
+    <script type="module" src="js/pagos.js"></script>
 </body>
 
 </html>
