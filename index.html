@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soccer Fields - Reserva de Canchas de Fútbol en Barranquilla</title>
-  <meta name="description" content="Reserva canchas de fútbol en Barranquilla de forma rápida y sencilla. Canchas con iluminación LED, estacionamiento, duchas modernas y césped sintético profesional.">
-  <meta name="keywords" content="reserva de canchas, canchas de fútbol, Barranquilla, alquiler de canchas, soccer fields, fútbol 5, fútbol sintético">
+  <meta name="description"
+    content="Reserva canchas de fútbol en Barranquilla de forma rápida y sencilla. Canchas con iluminación LED, estacionamiento, duchas modernas y césped sintético profesional.">
+  <meta name="keywords"
+    content="reserva de canchas, canchas de fútbol, Barranquilla, alquiler de canchas, soccer fields, fútbol 5, fútbol sintético">
   <meta name="author" content="Sebastian Llanos, Daniel Lopez & Carlos Villalobos">
   <meta name="robots" content="index, follow">
   <link rel="icon" href="img/soccerfieldslogo.png" type="image/x-icon">
@@ -57,8 +59,12 @@
     <section id="disponibilidad" class="disponibilidad" aria-labelledby="disponibilidad-title">
       <h2 id="disponibilidad-title" class="disponibilidad__titulo center">Disponibilidad De Canchas</h2>
       <div class="disponibilidad__contenedor">
-        <h3 class="disponibilidad__subtitulo">Horario de Hoy (Lunes, 10 de junio)</h3>
+        <h3 class="disponibilidad__subtitulo">Horario (<span id="dia-legible"></span>)</h3>
         <p class="disponibilidad__descripcion">Consulta los últimos espacios libres disponibles para reservar.</p>
+        <div class="field">
+          <input type="date" id="selector-dia">
+          <span id="selector-dia-error" class="error" hidden aria-live="polite"></span>
+        </div>
         <table>
           <thead>
             <tr>
@@ -66,73 +72,7 @@
               <th scope="col">Estado</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>08:00 AM - 09:00 AM</td>
-              <td><button class="estado_disponible" aria-label="Reservar franja 08:00 AM a 09:00 AM">Disponible</button>
-              </td>
-            </tr>
-            <tr>
-              <td>09:00 AM - 10:00 AM</td>
-              <td><button class="estado_reservado" disabled aria-disabled="true"
-                  aria-label="Franja 09:00 AM a 10:00 AM reservada">Reservado</button></td>
-            </tr>
-            <tr>
-              <td>10:00 AM - 11:00 AM</td>
-              <td><button class="estado_disponible" aria-label="Reservar franja 10:00 AM a 11:00 AM">Disponible</button>
-              </td>
-            </tr>
-            <tr>
-              <td>11:00 AM - 12:00 PM</td>
-              <td><button class="estado_reservado" disabled aria-disabled="true"
-                  aria-label="Franja 11:00 AM a 12:00 PM reservada">Reservado</button></td>
-            </tr>
-            <tr>
-              <td>12:00 PM - 01:00 PM</td>
-              <td><button class="estado_disponible" aria-label="Reservar franja 12:00 PM a 01:00 PM">Disponible</button>
-              </td>
-            </tr>
-            <tr>
-              <td>01:00 PM - 02:00 PM</td>
-              <td><button class="estado_reservado" disabled aria-disabled="true"
-                  aria-label="Franja 01:00 PM a 02:00 PM reservada">Reservado</button></td>
-            </tr>
-            <tr>
-              <td>02:00 PM - 03:00 PM</td>
-              <td><button class="estado_disponible" aria-label="Reservar franja 02:00 PM a 03:00 PM">Disponible</button>
-              </td>
-            </tr>
-            <tr>
-              <td>03:00 PM - 04:00 PM</td>
-              <td><button class="estado_reservado" disabled aria-disabled="true"
-                  aria-label="Franja 03:00 PM a 04:00 PM reservada">Reservado</button></td>
-            </tr>
-            <tr>
-              <td>04:00 PM - 05:00 PM</td>
-              <td><button class="estado_disponible" aria-label="Reservar franja 04:00 PM a 05:00 PM">Disponible</button>
-              </td>
-            </tr>
-            <tr>
-              <td>05:00 PM - 06:00 PM</td>
-              <td><button class="estado_disponible" aria-label="Reservar franja 05:00 PM a 06:00 PM">Disponible</button>
-              </td>
-            </tr>
-            <tr>
-              <td>06:00 PM - 07:00 PM</td>
-              <td><button class="estado_disponible" aria-label="Reservar franja 06:00 PM a 07:00 PM">Disponible</button>
-              </td>
-            </tr>
-            <tr>
-              <td>07:00 PM - 08:00 PM</td>
-              <td><button class="estado_disponible" aria-label="Reservar franja 07:00 PM a 08:00 PM">Disponible</button>
-              </td>
-            </tr>
-            <tr>
-              <td>08:00 PM - 09:00 PM</td>
-              <td><button class="estado_disponible" aria-label="Reservar franja 08:00 PM a 09:00 PM">Disponible</button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="slots-tbody"></tbody>
         </table>
       </div>
     </section>
@@ -187,7 +127,7 @@
             <li>Iluminación incluida</li>
             <li>Acceso a duchas</li>
           </ul>
-          <button role="button" aria-label="Seleccionar plan Valor por Hora">Seleccionar Plan</button>
+          <button role="button" class="btn-sin-paquete" aria-label="Seleccionar plan Valor por Hora">Seleccionar Plan</button>
         </article>
 
         <article class="precios__card central reveal" role="listitem">
@@ -196,11 +136,11 @@
           <p>Perfecto para torneos cortos y prácticas extendidas.</p>
           <p><span class="sr-only">Precio:</span><span aria-label="Precio 400 mil pesos">$400K</span></p>
           <ul>
-            <li>6 horas de juego</li>
+            <li>5 horas de juego</li>
             <li>Estacionamiento incluido</li>
             <li>Acceso a duchas</li>
           </ul>
-          <button role="button" aria-label="Seleccionar plan Paquete Medio Día">Seleccionar Plan</button>
+          <button role="button" aria-label="Seleccionar plan Paquete Medio Día" class="btn-paquete" data-pkg-id="medio_dia" data-duration="5">Seleccionar Plan</button>
         </article>
 
         <article class="precios__card reveal" role="listitem">
@@ -208,11 +148,11 @@
           <p>La mejor opción para eventos deportivos y campeonatos.</p>
           <p><span class="sr-only">Precio:</span><span aria-label="Precio 650 mil pesos">$650K</span></p>
           <ul>
-            <li>12 horas de juego</li>
+            <li>10 horas de juego</li>
             <li>Iluminación incluida</li>
             <li>Estacionamiento incluido</li>
           </ul>
-          <button role="button" aria-label="Seleccionar plan Paquete Día Completo">Seleccionar Plan</button>
+          <button role="button" aria-label="Seleccionar plan Paquete Día Completo" class="btn-paquete" data-pkg-id="dia_completo" data-duration="10">Seleccionar Plan</button>
         </article>
 
       </div>
@@ -232,10 +172,11 @@
 
             <label for="nombre_completo">Nombre</label>
             <input type="text" placeholder="Tu Nombre" name="nombre_completo" id="nombre_completo" required
-              autocomplete="name" />
+              autocomplete="name">
 
             <label for="email">Email</label>
-            <input type="email" placeholder="tu@correo.com" name="email" id="email" required autocomplete="email" inputmode="email" />
+            <input type="email" placeholder="tu@correo.com" name="email" id="email" required autocomplete="email"
+              inputmode="email">
 
             <label for="mensaje">Mensaje</label>
             <textarea name="mensaje" id="mensaje" placeholder="Tu mensaje aquí..." required></textarea>
@@ -280,6 +221,7 @@
   <script src="js/effects/activeLinkObserver.js"></script>
   <script src="js/effects/showCards.js"></script>
   <script src="js/effects/updateYear.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
